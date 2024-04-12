@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icons/icons8-laboratory-96.png" type="image/x-icon">
+    <title>Bell Labs - A Tasklist UI App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/6e38ffc0f6.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+
+<body>
+    <!-- Header section starts -->
+    <header class="sidebar">
+        <div class="logo">
+            <i class="fa-solid fa-bell fa-shake"></i>
+            <h3>Bell Labs</h3>
+        </div>
+        <nav class="navbar">
+            <a href="#dashboard" id=""> <i class="fa-solid fa-house"></i> <span>Dashboard</span></a>
+            <a href="#projects" id=""> <i class="fa-solid fa-file"></i> <span>Projects</span></a>
+            <a href="#tasks" id=""> <i class="fa-solid fa-list-check"></i> <span>Tasks</span></a>
+            <a href="#employees" id=""> <i class="fa-solid fa-users"></i> Employees</a>
+            <a href="#services" id=""> <i class="fa-solid fa-wrench"></i> <span>Services</span></a>
+            <a href="#chat" id=""> <i class="fa-brands fa-rocketchat"></i> <span>Chat</span></a>
+        </nav>
+    </header>
+    <!-- Header section starts -->
+
+    <!-- Menu Icon -->
+    <div class="responsive-header">
+        <h3>Bell Labs</h3>
+        <i class="fas fa-bars" id="bar-icon"></i>
+        <i class="fa-solid fa-xmark" id="cross-icon"></i>
+    </div>
+    <div class="responsive-menu" id="menu">
+        <a href="#dashboard" class="menu-item">Dashboard</a>
+        <a href="#projects" class="menu-item">Projects</a>
+        <a href="#tasks" class="menu-item">Tasks</a>
+        <a href="#employees" class="menu-item">Employees</a>
+        <a href="#services" class="menu-item">Services</a>
+        <a href="#chat" class="menu-item">Chat</a>
+    </div>
+
+    <section class="dashboard" id="dashboard">
+        <div class="dashboard-container">
+            <h1>Statistics</h1>
+            <div class="stat-cards-container">
+                <div class="stat-card">
+                    <div class="stat-card-icon">
+                        <i class="fa-solid fa-suitcase"></i>
+                    </div>
+                    <div class="stat-card-text">
+                        <h3>Projects</h3>
+                        <p>100+ Projects</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <div class="stat-card-text">
+                        <h3>Clients</h3>
+                        <p>2400+ Happy Customers</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-icon">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <div class="stat-card-text">
+                        <h3>Reviews</h3>
+                        <p>1345+ Five Star Reviews</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div class="stat-card-text">
+                        <h3>Store</h3>
+                        <p>Availed on 18+ Indian Cities</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chart">
+                <div id="analytics-chart">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <div class="project-details-container">
+            <h1>Project Details</h1>
+            <select name="selectProject" id="project-selector">
+                <option value="ongoing">Ongoing</option>
+                <option value="completed">Completed</option>
+                <option value="upcoming">Upcoming</option>
+            </select>
+
+            <div class="project-container"></div>
+            <h2>Project Status:</h2>
+            <div class="project-status-container">
+                <div class="status-card">
+                    <h2>Projects in progress</h2>
+                    <div class="status-spans">
+                        <span id="first-status-first-span">Deployment in progress</span>
+                        <span id="first-status-second-span">Build failed</span>
+                    </div>
+                    <h4 id="h4-grey">Improve code quality</h4>
+                    <p id="p-grey">Raised by Mohit Raj, 2 hours ago</p>
+                    <div class="status-spans" id="span-grey">
+                        <span> <i class="fa-regular fa-comment"></i> 17 reviews</span>
+                        <span> <i class="fa-regular fa-circle-up"></i> 23 files modified</span>
+                    </div>
+                </div>
+                <div class="status-card">
+                    <h2>Projects completed</h2>
+                    <div class="status-spans" id="second-status-first-span">
+                        <span>Deployment in progress</span>
+                        <span>Build Passing</span>
+                    </div>
+                    <h4>Deploy Heroku</h4>
+                    <p>Raised by Shefali Singh, 14 hours ago</p>
+                    <div class="status-spans">
+                        <span> <i class="fa-regular fa-comment"></i> 10 reviews</span>
+                        <span> <i class="fa-regular fa-circle-up"></i> 57 files modified</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tasks" id="tasks">
+        <div class="task-details-container">
+            <div class="task-heading">
+                <h1>Task List</h1>
+                <button class="add-task" id="addTask">Add task</button>
+                <!-- The modal -->
+                <div id="addTaskModal" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span id="c-l-o-s-e">&times;</span>
+                        <h2>Add new task</h2>
+                        <form>
+                            <input type="text" id="task" name="task" required><br><br>
+                            <button type="button" class="add-btn" id="addBtn">Add</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <table id="taskTable">
+                <thead id="task-header">
+                    <tr>
+                        <th>Tasks</th>
+                    </tr>
+                </thead>
+                <tbody id="taskTableBody">
+
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="employees" id="employees">
+        <div class="upper">
+            <input type="search" name="" id="" class="search" placeholder="Search...">
+            <p id="date-time"></p>
+            <div class="view-btn">
+                <button class="viewBtn active" id="list-view">List View</button>
+                <button class="viewBtn" id="grid-view">Grid View</button>
+            </div>
+        </div>
+        <div class="middle">
+            <div class="task-heading">
+                <div class="task-desc">
+                    <h1>Employee List</h1>
+                    <p>A list of all the users in your account including their name, email, title and role.</p>
+                </div>
+                <button class="cta" id="cta">Add employee</button>
+                <!-- The modal -->
+                <div id="addEmployeeModal" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span id="close">&times;</span>
+                        <h2>Add new employee</h2>
+                        <form>
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required><br><br>
+
+                            <label for="email">Email:</label>
+                            <input type="text" id="email" name="email" required><br><br>
+
+                            <label for="title">Title:</label>
+                            <input type="text" id="title" name="title" required><br><br>
+
+                            <label for="role">Role:</label>
+                            <input type="text" id="role" name="role" required><br><br>
+
+                            <button type="button" class="add-btn" id="add-btn">Add</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <table id="employeeTable">
+                <thead id="table-header">
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Title</th>
+                        <th>Role</th>
+                    </tr>
+                </thead>
+                <tbody id="employeeTableBody">
+
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h1>Services We Offered</h1>
+        <div class="service-card-container">
+            <div class="service-card">
+                <div class="service-img-container">
+                    <img src="icons/icons8-cloud-services-66.png" alt="Cloud Service Icon">
+                </div>
+                <h3>Cloud Services</h3>
+            </div>
+            <div class="service-card">
+                <div class="service-img-container">
+                    <img src="icons/icons8-secure-mail-100.png" alt="Email Service Icon">
+                </div>
+                <h3>Email Services</h3>
+            </div>
+            <div class="service-card">
+                <div class="service-img-container">
+                    <img src="icons/icons8-software-64.png" alt="Software Development Icon">
+                </div>
+                <h3>Software Development</h3>
+            </div>
+            <div class="service-card">
+                <div class="service-img-container">
+                    <img src="icons/icons8-saas-64.png" alt="SaaS Icon">
+                </div>
+                <h3>SaaS</h3>
+            </div>
+            <div class="service-card">
+                <div class="service-img-container">
+                    <img src="icons/icons8-remote-support-64.png" alt="Remote Support Icon">
+                </div>
+                <h3>IT Support</h3>
+            </div>
+            <div class="service-card">
+                <div class="service-img-container">
+                    <img src="icons/icons8-online-support-80.png" alt="Online Support Icon">
+                </div>
+                <h3>Online Support</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="chat" id="chat">
+        <div class="chat-container">
+            <div class="upper-chat">
+                <div class="chat-card">
+                    <i class="fa-solid fa-message"></i>
+                    <a href="" class="">Chat with us</a>
+                </div>
+                <div class="chat-card">
+                    <i class="fa-solid fa-phone"></i>
+                    <a href="" class="">Call us</a>
+                </div>
+                <div class="chat-card">
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="" class="">Mail us</a>
+                </div>
+            </div>
+            <div class="lower-chat">
+                <video src="videos/Your paragraph text.mp4" type="video/mp4" autoplay muted loop></video>
+            </div>
+            <footer>
+                <b>Copyright&#169;BellLabs. All Rights Reserved.</b>
+            </footer>
+        </div>
+    </section>
+
+    <script src="responsiveNav.js"></script>
+    <script src="navigation.js"></script>
+    <script src="statisticsChart.js"></script>
+    <script src="window.js"></script>
+    <script src="tasks.js"></script>
+    <script src="projects.js"></script>
+    <script src="printDate.js"></script>
+    <script src="view.js"></script>
+    <script src="addEmployee.js"></script>
+    <script src="searchEmployee.js"></script>
+</body>
+
+</html>

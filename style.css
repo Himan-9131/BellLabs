@@ -1,0 +1,1177 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --charcoal-navy: #1e293b;
+    --fainted-green: #10b981;
+    --deep-fainted-green: #14b8a6;
+    --black: #171717;
+    --violent-green: #16a24a;
+    --pinkish-red: rgb(255, 231, 192);
+    --link-text: gainsboro;
+    --border: #E5E4E2;
+    --white: #fff;
+    --border-radius: .3rem;
+}
+
+/* Common code */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin-left: 25rem;
+    background: var(--border);
+}
+
+section {
+    /* min-height: 100vh; */
+    min-height: auto;
+    padding: 1rem;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+a {
+    font-size: 1rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 25rem;
+    height: 100%;
+    padding: 2rem;
+    background: var(--charcoal-navy);
+}
+
+.sidebar .logo {
+    font-size: 2rem;
+    color: var(--deep-fainted-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.sidebar .navbar {
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.sidebar .navbar a {
+    font-size: 1.5rem;
+    width: 100%;
+    color: var(--link-text);
+    padding: 1rem 2rem;
+    position: relative;
+    transition: 0.2s ease;
+}
+
+.sidebar .navbar a.active {
+    border-left: 5px solid var(--border);
+}
+
+.sidebar .navbar i {
+    margin-right: 1rem;
+}
+
+.sidebar .navbar a:hover {
+    border-left: 5px solid var(--border);
+    background: var(--deep-fainted-green);
+    transition: .2s ease-in-out;
+    color: var(--white);
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.responsive-header {
+    display: none;
+}
+
+.responsive-menu {
+    display: none;
+}
+
+.dashboard .dashboard-container {
+    padding: 1rem 2rem;
+    background: var(--white);
+    border-radius: var(--border-radius);
+}
+
+.dashboard .dashboard-container h1 {
+    color: var(--deep-fainted-green);
+    text-align: center;
+}
+
+.dashboard .dashboard-container .stat-cards-container {
+    margin-top: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.dashboard .dashboard-container .stat-cards-container .stat-card {
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    background: var(--deep-fainted-green);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+}
+
+.dashboard .dashboard-container .stat-cards-container .stat-card div {
+    padding: 0 1rem;
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard .dashboard-container .stat-cards-container .stat-card div:nth-child(1) {
+    border-right: 1px solid var(--border);
+}
+
+.dashboard .dashboard-container .stat-cards-container .stat-card i {
+    font-size: 3rem;
+}
+
+.dashboard .dashboard-container .stat-cards-container .stat-card h3 {
+    font-size: 2rem;
+}
+
+.chart {
+    margin-top: 16rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#analytics-chart {
+    width: 37.5rem;
+    height: 25rem;
+}
+
+/************************************ Tasks Section ***********************************/
+
+.tasks .task-details-container {
+    background: var(--black);
+    width: 100%;
+    padding: 2rem;
+    margin-top: 2rem;
+    color: var(--border);
+    border-radius: var(--border-radius);
+}
+
+.tasks .task-details-container .task-heading h1 {
+    color: var(--border);
+}
+
+.task-details-container .task-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.task-details-container .task-heading .add-task {
+    border: none;
+    border-radius: var(--border-radius);
+    padding: .5rem 1rem;
+    background: var(--deep-fainted-green);
+    color: var(--white);
+    cursor: pointer;
+}
+
+.tasks .task-details-container table {
+    margin-top: 8rem;
+    width: 100%;
+    background: var(--charcoal-navy);
+    border-radius: .6rem;
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    text-align: left;
+    padding: 10px;
+    border: none;
+}
+
+.tasks .task-details-container table tr th {
+    font-size: 1.5rem;
+}
+
+.tasks .task-details-container table tr td {
+    font-size: 1.3rem;
+    color: var(--black);
+}
+
+.tasks .task-details-container table tbody {
+    background-color: var(--white);
+}
+
+.tasks .task-details-container table tbody tr:nth-child(even) {
+    background-color: rgb(246, 244, 244);
+}
+
+/************************************ Projects Section ***********************************/
+
+.projects .project-details-container {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+.projects .project-details-container h1 {
+    text-align: center;
+    color: var(--deep-fainted-green);
+}
+
+.projects .project-details-container select {
+    cursor: pointer;
+    outline: none;
+}
+
+.projects .project-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.projects .project-container .project-card {
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    border-radius: var(--border-radius);
+    padding-bottom: 2rem;
+}
+
+.projects .project-container .project-card .project-image img {
+    width: 30rem;
+    height: 20rem;
+}
+
+.projects .project-container .project-card .project-desc h3 {
+    font-size: 2rem;
+}
+
+.projects .project-container .project-card .project-desc p {
+    font-size: 1.2rem;
+}
+
+.projects .project-status-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.projects .project-status-container .status-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-radius: var(--border-radius);
+    padding: 3rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#first-status-first-span {
+    background: #FFF5EE;
+    padding: .5rem;
+    border-radius: var(--border-radius);
+}
+
+#first-status-second-span {
+    background: #FFD580;
+    padding: .5rem;
+    border-radius: var(--border-radius);
+}
+
+.projects .project-status-container .status-card:nth-child(2) {
+    background: var(--violent-green);
+    color: var(--white);
+}
+
+#second-status-first-span {
+    color: var(--black);
+}
+
+#second-status-first-span span {
+    background: rgb(206, 246, 206);
+    padding: .5rem;
+    border-radius: var(--border-radius);
+}
+
+#h4-grey {
+    color: #A9A9A9;
+}
+
+#p-grey,
+#span-grey {
+    color: #C0C0C0;
+}
+
+.projects .project-status-container .status-card:nth-child(2) h2 {
+    color: var(--white);
+}
+
+.projects .project-status-container .status-card h2 {
+    font-size: 1.9rem;
+}
+
+.projects .project-status-container .status-card span:nth-of-type(-n+2) {
+    font-size: 1.1rem;
+}
+
+.projects .project-status-container .status-card h4 {
+    font-size: 1.5rem;
+}
+
+.projects .project-status-container .status-card span:nth-last-of-type(-n+2) {
+    margin-right: 1rem;
+}
+
+.projects .project-status-container .status-card span i {
+    margin-right: .5rem;
+}
+
+
+/************************************ Employee Section ***********************************/
+
+.employees .upper {
+    width: 100%;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    border-radius: var(--border-radius);
+}
+
+.employees .upper .search {
+    width: 50rem;
+    padding: .5rem 1rem;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    background: rgb(242, 242, 242);
+}
+
+#date-time {
+    font-size: 1.5rem;
+}
+
+.employees .upper .view-btn {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.employees .upper .view-btn .viewBtn {
+    border: .5px solid grey;
+    outline: none;
+    padding: .5rem 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.active {
+    background-color: var(--charcoal-navy);
+    color: var(--white);
+}
+
+/* List View */
+.employees .middle table tbody.list tr {
+    display: table-row;
+}
+
+/* Grid View */
+.employees .middle table tbody.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 1rem;
+    padding: 10px;
+    grid-template-rows: auto;
+}
+
+.employees .middle table tbody.grid tr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.middle {
+    padding: 2rem;
+    margin-top: 2rem;
+    background: var(--black);
+    color: var(--border);
+    border-radius: var(--border-radius);
+}
+
+.middle .task-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.middle .task-heading .cta {
+    border: none;
+    border-radius: var(--border-radius);
+    padding: .5rem 1rem;
+    background: var(--deep-fainted-green);
+    color: var(--white);
+    cursor: pointer;
+}
+
+.employees .middle table {
+    margin-top: 8rem;
+    width: 100%;
+    background: var(--charcoal-navy);
+    border-radius: .6rem;
+    border-collapse: collapse;
+}
+
+/* To be continue here */
+table th,
+table td {
+    text-align: left;
+    padding: 10px;
+    border: none;
+}
+
+.employees .middle table tr th {
+    font-size: 1.5rem;
+}
+
+.employees .middle table tr td {
+    font-size: 1.3rem;
+    color: var(--black);
+}
+
+.employees .middle table tbody {
+    background-color: var(--white);
+}
+
+.employees .middle table tbody tr:nth-child(even) {
+    background-color: rgb(246, 244, 244);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: .4rem;
+    width: 80%;
+    max-width: 600px;
+}
+
+.modal-content span,
+h2,
+form label {
+    color: var(--black);
+}
+
+.modal-content h2 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.modal-content span {
+    float: right;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.modal-content form label {
+    font-size: 1.5rem;
+}
+
+input[type=text],
+select {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.add-btn {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.add-btn:hover {
+    background-color: #45a049;
+}
+
+
+/************************************ Services Section ***********************************/
+
+.services h1 {
+    text-align: center;
+    font-size: 4rem;
+    color: var(--deep-fainted-green);
+    background: var(--white);
+    border-radius: var(--border-radius);
+}
+
+.services .service-card-container {
+    background: var(--white);
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.services .service-card-container .service-card {
+    width: 20rem;
+    height: 20rem;
+    padding: .5rem;
+    background-color: var(--white);
+    text-align: center;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.services .service-card-container .service-card .service-img-container {
+    background: var(--black);
+    padding: 1rem;
+}
+
+.services .service-card-container .service-card .service-img-container img {
+    width: 100px;
+    height: 100px;
+}
+
+.services .service-card-container .service-card h3 {
+    padding: 2rem 0;
+    font-size: 2rem;
+    line-height: 1;
+    color: var(--deep-fainted-green);
+}
+
+/************************************ Chat Section ***********************************/
+
+.chat .chat-container {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+}
+
+.chat .upper-chat {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.chat .upper-chat .chat-card {
+    width: 30rem;
+    /* border: 1px solid var(--deep-fainted-green); */
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+}
+
+.chat .upper-chat .chat-card i {
+    font-size: 5rem;
+    color: var(--deep-fainted-green);
+}
+
+.chat .upper-chat .chat-card a {
+    font-size: 2rem;
+    border: 1px solid var(--deep-fainted-green);
+    color: var(--deep-fainted-green);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+}
+
+.chat .upper-chat .chat-card a:hover {
+    background: var(--deep-fainted-green);
+    color: var(--white);
+}
+
+.chat .lower-chat {
+    margin-top: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.chat .lower-chat video {
+    width: 60rem;
+    height: 30rem;
+}
+
+.chat .lower-chat img {
+    width: 30rem;
+    height: 30rem;
+}
+
+.chat .lower-chat h3 {
+    font-size: 2rem;
+    color: var(--deep-fainted-green);
+}
+
+footer {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: var(--deep-fainted-green);
+    text-align: center;
+}
+
+
+/* Responsive Design */
+
+@media screen and (max-width: 992px) {
+
+    section {
+        padding: .5rem;
+    }
+
+    .dashboard .dashboard-container .stat-cards-container .stat-card {
+        width: 18rem;
+        padding: .5rem;
+    }
+
+    .status-spans {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .middle {
+        overflow-x: auto;
+    }
+
+    .employees .middle table {
+        width: auto;
+        min-width: 100%;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        margin: 0;
+        background: var(--white);
+    }
+
+    section {
+        width: auto;
+        min-height: 100vh;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    a {
+        font-size: .8rem;
+    }
+
+    p {
+        font-size: .8rem;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .responsive-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 2rem;
+        background: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 2rem;
+        color: var(--deep-fainted-green);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+    }
+
+    #bar-icon.active {
+        display: none;
+    }
+
+    #cross-icon {
+        display: none;
+    }
+
+    #cross-icon.active {
+        display: block;
+    }
+
+    #menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        background-color: #fff;
+        width: 50%;
+        height: 100vh;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+    }
+
+    #menu a {
+        font-size: 1.5rem;
+        color: var(--deep-fainted-green);
+    }
+
+    #menu.active {
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 1.5rem;
+        padding: 5rem 2.5rem;
+    }
+
+    .dashboard {
+        margin-top: 8rem;
+    }
+
+    .dashboard .dashboard-container {
+        padding: 0;
+    }
+
+    .dashboard .dashboard-container .stat-cards-container {
+        margin-top: 3rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .dashboard .dashboard-container .stat-cards-container .stat-card {
+        width: 14rem;
+        padding: .5rem;
+    }
+
+    .dashboard .dashboard-container .stat-cards-container .stat-card div {
+        padding: 0 .5rem;
+        height: 4rem;
+    }
+
+    .dashboard .dashboard-container .stat-cards-container .stat-card i {
+        font-size: 2rem;
+    }
+
+    .dashboard .dashboard-container .stat-cards-container .stat-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .chart {
+        margin-top: 5rem;
+    }
+
+    /* Projects Section */
+
+    .projects .project-details-container {
+        gap: 2rem;
+    }
+
+    .projects .project-container {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .projects .project-container .project-card {
+        width: 20rem;
+        gap: 1rem;
+    }
+
+    .projects .project-container .project-card .project-image img {
+        width: 20rem;
+        height: 10rem;
+    }
+
+    .projects .project-container .project-card .project-desc h3 {
+        font-size: 1.2rem;
+    }
+
+    .projects .project-container .project-card .project-desc p {
+        font-size: .8rem;
+    }
+
+    .projects .project-status-container {
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    .projects .project-status-container .status-card {
+        gap: 1rem;
+        padding: 2rem;
+    }
+
+    /* Task Section */
+
+    .task-details-container .task-heading .add-task {
+        padding: .5rem;
+        font-size: 1rem;
+    }
+
+    /* Employee Section */
+
+    .employees .upper {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 0rem;
+    }
+
+    .employees .upper .search {
+        width: 100%;
+    }
+
+    #date-time {
+        display: none;
+    }
+
+    .employees .upper .view-btn {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .employees .upper .view-btn .viewBtn {
+        padding: .5rem;
+    }
+
+    .middle {
+        overflow-x: auto;
+    }
+
+    .middle .task-heading .cta {
+        padding: .5rem;
+        font-size: 1rem;
+    }
+
+    .employees .middle table {
+        margin-top: 5rem;
+        width: auto;
+        min-width: 100%;
+    }
+
+    .employees .middle table th,
+    .employees .middle table td {
+        padding: .625rem .313rem;
+        white-space: nowrap;
+    }
+
+    .employees .middle table tr th {
+        font-size: 1.2rem;
+    }
+
+    .employees .middle table tr td {
+        font-size: 1rem;
+    }
+
+    /* Services Section */
+
+    .services h1 {
+        font-size: 2rem;
+    }
+
+    .services .service-card-container {
+        padding: 2rem;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .services .service-card-container .service-card .service-img-container img {
+        width: 6.25rem;
+        height: 6.25rem;
+    }
+
+    .services .service-card-container .service-card h3 {
+        font-size: 2rem;
+        line-height: 1;
+    }
+
+    /* Chat Section */
+
+    .chat .upper-chat .chat-card {
+        width: 12rem;
+        /* border: 1px solid var(--deep-fainted-green); */
+        padding: 1rem;
+        gap: 2rem;
+    }
+
+    .chat .upper-chat .chat-card i {
+        font-size: 2rem;
+    }
+
+    .chat .upper-chat .chat-card a {
+        font-size: 1.2rem;
+        border: 1px solid var(--deep-fainted-green);
+        color: var(--deep-fainted-green);
+        padding: 0.5rem 1rem;
+        border-radius: var(--border-radius);
+    }
+
+    .chat .upper-chat .chat-card a:hover {
+        background: var(--deep-fainted-green);
+        color: var(--white);
+    }
+
+    .chat .lower-chat {
+        margin-top: 10rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .chat .lower-chat video {
+        width: 60rem;
+        height: 30rem;
+    }
+
+    .chat .lower-chat img {
+        width: 30rem;
+        height: 30rem;
+    }
+
+    .chat .lower-chat h3 {
+        font-size: 2rem;
+        color: var(--deep-fainted-green);
+    }
+
+    footer {
+        font-size: 1.2rem;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    section {
+        width: auto;
+    }
+
+    .responsive-header {
+        padding: 1rem;
+        font-size: 1.2rem;
+    }
+
+    /* Project Folder */
+
+    .status-spans {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    /* Task Section */
+
+    .tasks {
+        min-height: auto;
+    }
+
+    .tasks .task-details-container {
+        padding: 1rem;
+    }
+
+    .tasks .task-details-container .task-heading h1 {
+        font-size: 1.5rem;
+    }
+
+    .task-details-container .task-heading .add-task {
+        padding: .5rem;
+    }
+
+    .tasks .task-details-container table {
+        margin-top: 3rem;
+    }
+
+    .tasks .task-details-container table tr th {
+        font-size: 1.2rem;
+    }
+
+    .tasks .task-details-container table tr td {
+        font-size: 1rem;
+        color: var(--black);
+    }
+
+    /* Employee Section */
+
+    .middle {
+        padding: .5rem;
+        margin-top: 2rem;
+    }
+
+    .employees .upper .view-btn .viewBtn {
+        font-size: .8rem;
+    }
+
+    .middle .task-heading h1 {
+        font-size: 1.5rem;
+    }
+
+    .middle .task-heading p {
+        font-size: .6rem;
+        padding-right: 3rem;
+    }
+
+    .middle .task-heading .cta {
+        padding: .5rem;
+        font-size: .8rem;
+    }
+
+    .employees .middle table {
+        margin-top: 3rem;
+    }
+
+    .employees .middle table tr th {
+        font-size: 1rem;
+    }
+
+    .employees .middle table tr td {
+        font-size: .8rem;
+    }
+
+    /* Services Section */
+
+    .services {
+        min-height: auto;
+    }
+
+    .services .service-card-container {
+        padding: 2rem;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .services .service-card-container .service-card {
+        width: 10rem;
+        height: auto;
+    }
+
+    .services .service-card-container .service-card .service-img-container img {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .services .service-card-container .service-card h3 {
+        font-size: 1rem;
+        line-height: 1;
+    }
+
+    /* Chat Section */
+
+    .chat {
+        min-height: auto;
+    }
+
+    .chat .chat-container {
+        background-color: var(--white);
+        border-radius: var(--border-radius);
+        padding: 1rem;
+    }
+
+    .chat .upper-chat {
+        justify-content: center;
+    }
+
+    .chat .upper-chat .chat-card {
+        width: 10rem;
+        padding: 1rem;
+        gap: 2rem;
+    }
+
+    .chat .upper-chat .chat-card i {
+        font-size: 2rem;
+    }
+
+    .chat .upper-chat .chat-card a {
+        font-size: .7rem;
+        padding: 0.2rem;
+    }
+
+    .chat .lower-chat {
+        margin-top: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .chat .lower-chat video {
+        width: 30rem;
+        height: 16rem;
+    }
+
+}

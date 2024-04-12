@@ -1,0 +1,43 @@
+[
+    {
+        "image": "./images/videoCall.jpg",
+        "name": "Vidoo",
+        "description": "An Application Program for Video Chat"
+    },
+    {
+        "image": "./images/codeInspector.jpg",
+        "name": "Binary Inspector",
+        "description": "A Data Leakage Detection System"
+    },
+    {
+        "image": "./images/devCollaboration.jpg",
+        "name": "Dev Crowd",
+        "description": "A Developers Collaboration Tool"
+    },
+    {
+        "image": "./images/whether.jpg",
+        "name": "Whether Daily",
+        "description": "A whether forecasting app"
+    },
+    {
+        "image": "./images/poor_to_good_progress_meter.jpg",
+        "name": "Speedometer",
+        "description": "Internet Speed Test App"
+    },
+    {
+        "image": "./images/expenseTracker.jpg",
+        "name": "Expenso",
+        "description": "Application for Tracking all Expenses in one stop"
+    },
+    {
+        "image": "./images/algoVisualizer.jpg",
+        "name": "MeetAlgo",
+        "description": "Algorithm Visualizer App"
+    },
+    {
+        "image": "./images/AISHOPASSISTANT.jpg",
+        "name": "Shop.AI",
+        "description": "An AI Shopping Assistant"
+    }
+]
+
